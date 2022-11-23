@@ -4,7 +4,7 @@ This is a To do app based on Flask and Sqlite3, using all the CRUD functions.
 
 This can be used as a biolerplate for Flask projects
 
-![Flask logo](https://github.com/ivshin365/Flask_to_do_app/tree/master/app/static/flask to do app.png)
+![Flask logo](https://github.com/ivshin365/Flask_to_do_app/blob/master/app/static/flask%20to%20do%20app.png)
 
 ## Python virtual environment
 Go to the project directory and execute the following command to create a Python virtual environment:
