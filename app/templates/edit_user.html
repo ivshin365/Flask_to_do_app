@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<section class="vh-100 gradient-custom-2" style="background-color: #7e40f6;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-12 col-xl-10">
+
+        <div class="card gradient-custom-3" style="background-color: rgb(48, 72, 116);">
+          <div class="card-body p-4 text-white">
+
+            <div class="text-center pt-3 pb-2">
+              <h2 class="my-4">Update Task</h2>
+            </div>
+
+            <form method='post' action='{{url_for("edit_user",uid=rows.UID)}}'>
+              <div class='form-group'>
+                <label>Team Member</label>
+                <input type='text' name='name' required class='form-control' value='{{rows.name}}'>
+              </div>
+              <div class='form-group'>
+                <label>Task</label>
+                <input type='text' name='task' required class='form-control' value='{{rows.task}}'>
+              </div>
+              <div class='form-group'>
+                <label>Priority</label>
+              <select class="form-select" aria-label="Default select example" placeholder="Select Priority" name='priority' >
+                <option selected>{{rows.priority}}</option>
+                <option value="High priority">High priority</option>
+                <option value="Low priority">Low priority</option>
+                <option value="Middle priority">Middle priority</option>
+              </select>
+            </div>
+              {% if rows.completed == 1 or rows.completed == NULL %}
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox"  id="flexCheckDefault" name='checkbox' Checked>
+                <label class="form-check-label" for="flexCheckDefault">
+                  Completed
+                </label>
+              </div>
+              {% else %}
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox"  id="flexCheckDefault" name='checkbox' >
+                <label class="form-check-label" for="flexCheckDefault">
+                  Completed
+                </label>
+              </div>
+              {% endif %}
+              <br>
+              <input type='submit' value='Submit' class="btn btn-info">
+            </form>
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
